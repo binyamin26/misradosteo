@@ -1,0 +1,529 @@
+/* Styles généraux */
+* {
+  font-family: 'Assistant', sans-serif;
+}
+
+.contact-page {
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero section */
+.contact-hero {
+  background: linear-gradient(135deg, rgba(19, 132, 108, 0.9) 0%, rgba(19, 132, 108, 0.7) 100%), url('/api/placeholder/1200/400');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.contact-subtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Style pour les noms de contact */
+.contact-name {
+  display: inline-block;
+  margin-left: 10px; /* Espace entre le nom et le numéro */
+}
+
+/* Contact main section */
+.contact-main {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.contact-main h2 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1.5rem;
+}
+
+/* Contact methods */
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.contact-method-card {
+  background-color: rgb(243, 237, 228);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-method-icon {
+  background-color: rgba(19, 132, 108, 0.1);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+
+.contact-method-icon i {
+  font-size: 2rem;
+  color: rgb(19, 132, 108);
+}
+
+.contact-method-card h3 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 0.5rem;
+}
+
+.contact-availability {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Contact form */
+.contact-form-container {
+  padding: 2rem;
+}
+
+.contact-form-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-card h2 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #ff3b30;
+  box-shadow: 0 0 0 1px rgba(255, 59, 48, 0.2);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgb(19, 132, 108);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(19, 132, 108, 0.2);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Style pour les messages d'erreur - NOUVEAU DESIGN */
+.field-error {
+  color: #ff3b30;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background-color: rgba(255, 59, 48, 0.1);
+  border-right: 3px solid #ff3b30;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.field-error:before {
+  content: "!";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background-color: #ff3b30;
+  color: white;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style pour les messages de succès et d'erreur du formulaire */
+.success-message {
+  background-color: rgba(52, 199, 89, 0.1);
+  color: #34c759;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+  border-right: 3px solid #34c759;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.success-message:before {
+  content: "✓";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background-color: #34c759;
+  color: white;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+  font-weight: bold;
+}
+
+.error-message {
+  background-color: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+  border-right: 3px solid #ff3b30;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.error-message:before {
+  content: "!";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background-color: #ff3b30;
+  color: white;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+  font-weight: bold;
+}
+
+/* Style pour la mise en évidence des champs avec erreur */
+.highlight-error {
+  animation: pulse 1.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* FAQ section - Design amélioré */
+.faq-section {
+  background-color: rgb(164, 219, 200);
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.faq-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(19, 132, 108, 0.7) 0%, rgba(19, 132, 108, 0.3) 100%);
+}
+
+/* Style spécial pour le titre des FAQ (sans les points d'interrogation) */
+.faq-section .section-title {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 2.5rem;
+  padding: 0.7rem 3rem;
+  color: white;
+  background: linear-gradient(135deg, rgb(19, 132, 108) 0%, rgb(4, 170, 109) 100%);
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(19, 132, 108, 0.3);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transform: translateY(-10px);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.faq-item {
+  background-color: rgb(243, 237, 228);
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px solid rgb(19, 132, 108);
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item::before {
+  content: "?";
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgba(19, 132, 108, 0.1);
+  z-index: 0;
+}
+
+.faq-item h3 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-item p {
+  position: relative;
+  z-index: 1;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CTA section */
+.about-cta {
+  background: linear-gradient(135deg, rgba(19, 132, 108, 0.9) 0%, rgba(19, 132, 108, 0.7) 100%), url('/api/placeholder/1200/400');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #488a72;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Styles partagés avec la page About */
+.custom {
+  font-size: x-large;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.custom .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.custom .image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(19, 132, 108);
+}
+
+.text-center {
+  text-align: center;
+}
+
+strong {
+  color: rgb(19, 132, 108);
+  font-weight: bold;
+}
+
+.devis {
+  background-color: rgb(164, 219, 200);
+  min-height: 300px;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 992px) {
+  .custom {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .custom {
+    font-size: large;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-section .section-title {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .faq-section .section-title {
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+  }
+}

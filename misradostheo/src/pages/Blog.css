@@ -1,0 +1,499 @@
+/* Blog.css */
+.blog-page {
+    font-family: 'Assistant', sans-serif;
+    color: #333;
+  }
+  
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Hero Section */
+  .blog-hero {
+    background: linear-gradient(135deg, rgba(19, 132, 108, 0.9) 0%, rgba(19, 132, 108, 0.7) 100%), url('/api/placeholder/1200/400');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .blog-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .blog-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .blog-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  /* Blog Content Layout */
+  .blog-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  /* Sidebar */
+  .blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .blog-search, .blog-categories, .recent-posts, .subscribe-box {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .blog-sidebar h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: #13846c;
+    position: relative;
+    padding-bottom: 0.8rem;
+  }
+  
+  .blog-sidebar h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #13846c;
+  }
+  
+  /* Search Box */
+  .search-box {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .search-box input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    outline: none;
+  }
+  
+  .search-button {
+    background-color: #13846c;
+    color: white;
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0e6b56;
+  }
+  
+  /* Categories */
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-list a {
+    display: block;
+    color: #555;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+  }
+  
+  .category-list a:hover {
+    color: #13846c;
+    transform: translateX(-5px);
+  }
+  
+  .category-list a.active {
+    color: #13846c;
+    font-weight: bold;
+  }
+  
+  /* Recent Posts */
+  .recent-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .recent-post-item {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .recent-post-image {
+    flex: 0 0 80px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .recent-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .recent-post-info {
+    flex: 1;
+  }
+  
+  .recent-post-info h4 {
+    font-size: 1rem;
+    margin: 0 0 0.3rem 0;
+  }
+  
+  .recent-post-info h4 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .recent-post-info h4 a:hover {
+    color: #13846c;
+  }
+  
+  .post-date {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  
+  /* Subscribe Box */
+  .subscribe-box p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .subscribe-form input {
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  .btn-subscribe {
+    background-color: #13846c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-subscribe:hover {
+    background-color: #0e6b56;
+  }
+  
+  /* Blog Posts Grid */
+  .blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .blog-post-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .post-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .blog-post-card:hover .post-image img {
+    transform: scale(1.05);
+  }
+  
+  .post-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #13846c;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .post-content {
+    padding: 1.5rem;
+  }
+  
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .post-meta i {
+    margin-left: 0.3rem;
+    color: #13846c;
+  }
+  
+  .post-title {
+    font-size: 1.3rem;
+    margin: 0 0 0.8rem 0;
+  }
+  
+  .post-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .post-title a:hover {
+    color: #13846c;
+  }
+  
+  .post-excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    color: #13846c;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .read-more i {
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #0e6b56;
+  }
+  
+  .read-more:hover i {
+    transform: translateX(-5px);
+  }
+  
+  /* Pagination */
+  .pagination {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+  }
+  
+  .pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination a:hover {
+    background-color: #e9ecef;
+  }
+  
+  .pagination a.active {
+    background-color: #13846c;
+    color: white;
+  }
+  
+  /* Newsletter Section */
+  .blog-newsletter {
+    background-color: #13846c;
+    color: white;
+    padding: 4rem 0;
+    margin-top: 4rem;
+  }
+  
+  .newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .newsletter-text {
+    flex: 1;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .newsletter-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .newsletter-form {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .newsletter-form button {
+    background-color: white;
+    color: #13846c;
+    border: none;
+    border-radius: 4px;
+    padding: 0 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-3px);
+  }
+
+  /* Blog.css */
+
+/* ... (votre CSS existant) ... */
+
+/* Styles pour le contenu complet affiché */
+.blog-post-card .full-content {
+    margin-top: 1rem; /* Espace au-dessus du contenu complet */
+    /* Ajoutez ici d'autres styles si nécessaire, par exemple pour les paragraphes, listes, etc. à l'intérieur */
+}
+
+/* Styles spécifiques pour le bouton "Réduire" */
+.blog-post-card .reduce-button {
+    background-color: #ccc; /* Couleur de fond différente pour le bouton réduire */
+    color: #333; /* Couleur du texte */
+     /* Ajustez le padding ou d'autres styles si besoin pour le différencier */
+}
+
+.blog-post-card .reduce-button:hover {
+     background-color: #bbb; /* Couleur au survol */
+}
+
+
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .blog-container {
+      grid-template-columns: 1fr 2fr;
+    }
+    
+    .blog-posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .blog-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .newsletter-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .newsletter-form {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .blog-title {
+      font-size: 2rem;
+    }
+    
+    .blog-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .post-meta {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+  }

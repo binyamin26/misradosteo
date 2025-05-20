@@ -1,0 +1,308 @@
+/* Styles généraux */
+* {
+  font-family: 'Assistant', sans-serif;
+}
+
+.about-page {
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero section */
+.about-hero {
+  background: linear-gradient(135deg, rgba(19, 132, 108, 0.9) 0%, rgba(19, 132, 108, 0.7) 100%), url('/api/placeholder/1200/400');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.about-subtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Story section */
+.about-story {
+  padding: 2rem;
+  background-color: white;
+}
+
+.about-story h2 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1.5rem;
+}
+
+.about-story p {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Mission section */
+.about-mission {
+  background-color: rgb(164, 219, 200);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  min-height: 300px;
+}
+
+.mission-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-content h2 {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.mission-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Values section */
+.about-values {
+  padding: 2rem;
+  background-color: rgb(243, 237, 228);
+}
+
+.about-values h2 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1.5rem;
+}
+
+.about-values ul {
+  padding-left: 20px;
+}
+
+.about-values li {
+  margin-bottom: 1rem;
+}
+
+/* Benefits section */
+.about-benefits {
+  background-color: rgb(243, 237, 228);
+  padding: 2rem;
+}
+
+.about-benefits h2 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1.5rem;
+}
+
+.about-benefits ul {
+  padding-left: 20px;
+}
+
+/* Business benefits section */
+.about-business {
+  padding: 2rem;
+  background-color: white;
+}
+
+.about-business h2 {
+  color: rgb(19, 132, 108);
+  margin-bottom: 1.5rem;
+}
+
+/* CTA section */
+.about-cta {
+  background: linear-gradient(135deg, rgba(19, 132, 108, 0.9) 0%, rgba(19, 132, 108, 0.7) 100%), url('/api/placeholder/1200/400');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #488a72;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Styles provenant du site existant */
+.custom {
+  font-size: x-large;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.custom .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.custom .image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(19, 132, 108);
+}
+
+.text-center {
+  text-align: center;
+}
+
+strong {
+  color: rgb(19, 132, 108);
+  font-weight: bold;
+}
+
+/* Styles pour les sections spécifiques de la page d'accueil existante */
+#section1 {
+  background-color: rgb(19, 132, 108);
+  color: white;
+}
+
+#section2 {
+  background-color: rgb(243, 237, 228);
+  color: #000;
+}
+
+#section3 {
+  background-color: white;
+  color: #000;
+}
+
+#section4 {
+  background-color: rgb(243, 237, 228);
+  color: #000;
+}
+
+#section5 {
+  background-color: rgb(164, 219, 200);
+  color: white;
+}
+
+.devis {
+  background-color: rgb(164, 219, 200);
+  min-height: 300px;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 992px) {
+  .custom {
+    grid-template-columns: 1fr;
+  }
+
+  .custom .image-content {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .custom {
+    font-size: large;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

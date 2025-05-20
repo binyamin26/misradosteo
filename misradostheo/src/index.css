@@ -1,0 +1,10 @@
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Suppression des définitions de couleurs qui entrent en conflit avec App.css */
+
+.container {
+  max-width: 800px;
+}
