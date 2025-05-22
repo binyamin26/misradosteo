@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './GlobalStyles.css';
 import './Temoignage.css';
+import { sendContactForm } from '../services/contactService.js';
 
 function Temoignage() {
   // État pour les valeurs des compteurs
@@ -10,6 +11,7 @@ function Temoignage() {
     stat3: 0,
     stat4: 0
   });
+  
 
   // Référence pour la section des statistiques
   const statsRef = useRef(null);
@@ -290,62 +292,82 @@ function Temoignage() {
     return true;
   };
   
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  // Marquer tous les champs comme touchés
+  setTouched({
+    name: true,
+    company: true,
+    email: true,
+    phone: true,
+    message: true
+  });
+  
+  // Réinitialiser les messages d'erreur et de succès
+  setSubmitSuccess(false);
+  setSubmitError('');
+  
+  // Vérifier si le formulaire est valide
+  if (!validateForm()) {
+    return;
+  }
+  
+  // Indiquer que l'envoi est en cours
+  setIsSubmitting(true);
+  
+  try {
+    // Adapter les données du formulaire pour correspondre au format attendu par le backend
+    const contactData = {
+      companyName: formData.company,
+      contactName: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      employeeCount: 'Non spécifié', // Ce champ est obligatoire dans le backend mais n'existe pas dans ce formulaire
+      message: formData.message
+    };
     
-    // Marquer tous les champs comme touchés
-    setTouched({
-      name: true,
-      company: true,
-      email: true,
-      phone: true,
-      message: true
-    });
+    // Envoyer les données du formulaire via le service de contact
+    const result = await sendContactForm(contactData);
     
-    // Réinitialiser les messages d'erreur et de succès
-    setSubmitSuccess(false);
-    setSubmitError('');
-    
-    // Vérifier si le formulaire est valide
-    if (!validateForm()) {
-      return;
+    // Si l'envoi a réussi
+    if (result.success) {
+      // Défiler vers le haut du formulaire pour montrer le message de succès
+      window.scrollTo({ top: document.getElementById('contact').offsetTop, behavior: 'smooth' });
+      
+      // Afficher le message de succès
+      setSubmitSuccess(true);
+      
+      // Réinitialiser le formulaire
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
+      // Réinitialiser l'état touché
+      setTouched({
+        name: false,
+        company: false,
+        email: false,
+        phone: false,
+        message: false
+      });
+    } else {
+      // Afficher le message d'erreur
+      setSubmitError(result.message || 'אירעה שגיאה בשליחת ההודעה. אנא נסה שנית.');
     }
-    
-    // Indiquer que l'envoi est en cours
-    setIsSubmitting(true);
-    
-    try {
-      // Simuler un envoi réussi (à remplacer par un vrai appel API)
-      setTimeout(() => {
-        // Afficher le message de succès
-        setSubmitSuccess(true);
-        
-        // Réinitialiser le formulaire
-        setFormData({
-          name: '',
-          company: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-        
-        // Réinitialiser l'état touché
-        setTouched({
-          name: false,
-          company: false,
-          email: false,
-          phone: false,
-          message: false
-        });
-        
-        setIsSubmitting(false);
-      }, 1000);
-    } catch (error) {
-      console.error('Error sending message:', error);
-      setSubmitError('אירעה שגיאה בשליחת ההודעה. אנא בדוק את החיבור לאינטרנט ונסה שנית.');
-      setIsSubmitting(false);
-    }
-  };
+  } catch (error) {
+    // Gérer les erreurs de connexion
+    console.error('Error sending message:', error);
+    setSubmitError('אירעה שגיאה בשליחת ההודעה. אנא בדוק את החיבור לאינטרנט ונסה שנית.');
+  } finally {
+    // Terminer l'état de chargement
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="testimonials-page rtl">

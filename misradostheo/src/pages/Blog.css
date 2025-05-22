@@ -51,6 +51,12 @@
     gap: 2rem;
     margin-bottom: 4rem;
   }
+   .blog-container-full {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+  }
   
   /* Sidebar */
   .blog-sidebar {
@@ -454,6 +460,735 @@
      background-color: #bbb; /* Couleur au survol */
 }
 
+/* Ajoutez ces styles à Blog.css */
+
+/* Styles pour le contenu complet de l'article */
+.article-full-content {
+  line-height: 1.6;
+  color: #333;
+  margin-top: 1.5rem;
+}
+
+.article-full-content h2 {
+  font-size: 1.8rem;
+  color: #13846c;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(19, 132, 108, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.article-full-content h3 {
+  font-size: 1.4rem;
+  color: #13846c;
+  margin: 1.5rem 0 0.8rem;
+}
+
+.article-full-content h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 1rem 0 0.5rem;
+}
+
+.article-full-content p {
+  margin-bottom: 1rem;
+}
+
+.article-full-content ul {
+  padding-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-full-content li {
+  margin-bottom: 0.5rem;
+}
+
+.exercise-item {
+  background-color: rgba(19, 132, 108, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-right: 3px solid rgba(19, 132, 108, 0.6);
+}
+
+.exercise-item h4 {
+  color: #13846c;
+  margin-top: 0;
+}
+
+.exercises-title {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.recommendations-title {
+  margin-top: 2rem;
+}
+
+.recommendations-list li {
+  background-color: rgba(19, 132, 108, 0.03);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.sources {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.sources h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.sources ul {
+  color: #555;
+}
+
+.conclusion {
+  background-color: rgba(19, 132, 108, 0.08);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.conclusion h3 {
+  color: #13846c;
+  margin-top: 0;
+}
+
+.conclusion p {
+  font-weight: 500;
+}
+
+/* Pour les émojis et les rendre un peu plus grands */
+.article-full-content h2 emoji,
+.article-full-content h3 emoji {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.info-section {
+  background-color: #f2f9f7;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  border-right: 4px solid #13846c;
+}
+
+.info-section h3 {
+  margin-top: 0;
+  color: #13846c;
+}
+
+/* Bénéfices de l'ostéopathie */
+.benefits-title {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.benefit-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  border-right: 3px solid #13846c;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-item h4 {
+  color: #13846c;
+  margin-top: 0.3rem;
+}
+
+.benefit-item p {
+  margin-bottom: 0.5rem;
+}
+
+/* Section de données */
+.data-section {
+  background-color: rgba(19, 132, 108, 0.05);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 2rem 0;
+}
+
+.data-section h3 {
+  margin-top: 0;
+}
+
+.data-list {
+  padding-right: 1.8rem;
+}
+
+.data-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.data-list li::before {
+  content: '';
+  position: absolute;
+  right: -1.5rem;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: #13846c;
+  border-radius: 50%;
+}
+
+/* Témoignage */
+.testimonial {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.testimonial h3 {
+  margin-top: 0;
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  position: relative;
+  padding: 0.5rem 2rem;
+  margin: 0;
+}
+
+.testimonial blockquote::before {
+  content: '"';
+  font-size: 3rem;
+  position: absolute;
+  right: -10px;
+  top: -15px;
+  color: rgba(19, 132, 108, 0.2);
+}
+
+.testimonial cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #555;
+  font-style: normal;
+}
+
+/* Style spécifique pour le bouton "Lire plus" au survol */
+.blog-post-card:nth-child(2) .read-more:hover {
+  color: #0d6354;
+}
+
+/* Mise en évidence des points importants */
+.article-full-content strong {
+  color: #13846c;
+  font-weight: 600;
+}
+
+.highlight-box {
+  background-color: #f0faf7;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1.2rem 0;
+  border-right: 4px solid #13846c;
+  font-size: 1.05rem;
+}
+
+/* Boîte de définition */
+.definition-box {
+  background-color: white;
+  border: 1px solid rgba(19, 132, 108, 0.3);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.definition-box h3 {
+  margin-top: 0;
+  color: #13846c;
+}
+
+/* Section du guide ergonomique */
+.guide-section {
+  margin: 2rem 0;
+}
+
+/* Éléments ergonomiques individuels */
+.ergonomic-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid rgba(19, 132, 108, 0.4);
+}
+
+.ergonomic-item h4 {
+  color: #13846c;
+  margin-top: 0;
+}
+
+.ergonomic-item ul {
+  padding-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+/* Icônes pour chaque élément ergonomique (placeholders) */
+.ergo-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 1rem;
+  left: 1rem;
+  opacity: 0.2;
+  border-radius: 50%;
+  background-color: #13846c;
+}
+
+/* Section de mouvement */
+.movement-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-right: 4px solid #13846c;
+}
+
+.movement-section h3 {
+  margin-top: 0;
+  color: #13846c;
+}
+
+.action-list {
+  padding-right: 1.5rem;
+  margin: 1rem 0;
+}
+
+.action-list li {
+  margin-bottom: 0.7rem;
+  padding-right: 0.5rem;
+  border-right: 2px solid rgba(19, 132, 108, 0.4);
+}
+
+.research-note {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+/* Section des conseils */
+.tips-section {
+  margin: 2rem 0;
+}
+
+.tips-list {
+  padding-right: 1.8rem;
+}
+
+.tips-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: '💡';
+  position: absolute;
+  right: -1.8rem;
+  top: 0;
+  font-size: 1rem;
+}
+
+/* Section des avantages pour les entreprises */
+.benefits-business {
+  background-color: #13846c;
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.benefits-business h3 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.benefit-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.benefit-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+  margin: 0;
+}
+
+/* Responsive pour la grille d'avantages */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+
+/* Nouveaux styles CSS uniquement pour l'article 4 - Douleurs du bas du dos */
+
+/* Section des causes de douleur */
+.pain-causes {
+  margin: 2rem 0;
+}
+
+/* Éléments individuels pour chaque cause */
+.cause-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  border-right: 3px solid rgba(19, 132, 108, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.cause-item:hover {
+  transform: translateX(-5px);
+}
+
+.cause-item h4 {
+  color: #13846c;
+  margin-top: 0;
+}
+
+.cause-icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 1.2rem;
+  left: 1.2rem;
+  opacity: 0.15;
+  background-color: #13846c;
+  border-radius: 50%;
+}
+
+/* Section des traitements */
+.treatments-section {
+  margin: 2.5rem 0;
+}
+
+.treatment-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.treatment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.check-icon {
+  color: #13846c;
+  font-size: 1.3rem;
+  margin-left: 0.7rem;
+}
+
+.treatment-card h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.treatment-card ul {
+  padding-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+.treatment-card li {
+  margin-bottom: 0.5rem;
+}
+
+.additional-treatments {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Section des exercices */
+.exercises-section {
+  background-color: #f2f9f7;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.exercises-section h3 {
+  margin-top: 0;
+  color: #13846c;
+}
+
+.exercises-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.exercise-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.exercise-box h4 {
+  font-size: 1rem;
+  color: #13846c;
+  margin-top: 0;
+}
+
+.exercise-box p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.warning-note {
+  background-color: #fff4e5;
+  border-right: 3px solid #ff9800;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+}
+
+.warning-note p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.warning-note strong {
+  color: #e65100;
+}
+
+/* Section des statistiques */
+.stats-section {
+  margin: 2.5rem 0;
+}
+
+.stats-list {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.stats-list::before {
+  content: '📊';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+
+.stats-list li {
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stats-list li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Responsive pour les grilles */
+@media (max-width: 768px) {
+  .exercises-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .additional-treatments {
+    grid-template-columns: 1fr;
+  }
+}
+
+.implementation-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.step-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  position: relative;
+  border-right: 3px solid rgba(19, 132, 108, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.step-item:hover {
+  transform: translateX(-5px);
+}
+
+.step-item h4 {
+  color: #13846c;
+  margin-top: 0;
+}
+
+.data-note {
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Responsive pour les éléments d'implémentation */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.comparison-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.summary-table {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.summary-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.summary-table th, .summary-table td {
+  padding: 0.8rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.summary-table th {
+  background-color: rgba(19, 132, 108, 0.1);
+  color: #13846c;
+  font-weight: bold;
+}
+
+.summary-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive pour la comparaison */
+@media (max-width: 768px) {
+  .comparison-section {
+    flex-direction: column;
+  }
+}
+
+.blog-post-card #fullcontent-8 {
+  padding: 0;
+  max-width: 100%;
+}
+
+.blog-post-card #fullcontent-8 h2 {
+  margin-top: 0;
+}
+
+.blog-post-card #fullcontent-8 ul,
+.blog-post-card #fullcontent-8 ol {
+  margin-bottom: 1.2rem;
+}
+
+.blog-post-card #fullcontent-8 .benefit-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  border-right: 3px solid #13846c;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-post-card #fullcontent-8 .benefit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.blog-post-card #fullcontent-8 .info-section {
+  background-color: #f2f9f7;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  border-right: 4px solid #13846c;
+}
+
+.blog-post-card #fullcontent-8 .highlight-box {
+  background-color: #f0faf7;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1.2rem 0;
+  border-right: 4px solid #13846c;
+  font-size: 1.05rem;
+}
+
+.blog-post-card #fullcontent-8 .conclusion {
+  background-color: rgba(19, 132, 108, 0.08);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+}
 
   
   /* Responsive */

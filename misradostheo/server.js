@@ -1,9 +1,9 @@
-// server.js (ES Modules)
+// server.js (ES Modules) - Version Production
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import { sendMail } from './src/config/smtp.js';
 
 // Obtenir le chemin du répertoire actuel en ES modules
@@ -15,6 +15,11 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Servir les fichiers statiques du build React
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(join(__dirname, 'dist')));
+}
 
 // API endpoint pour le formulaire de contact
 app.post('/api/contact', async (req, res) => {
@@ -71,9 +76,11 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Pour servir les fichiers statiques en production
+// Servir l'application React pour toutes les autres routes
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('build'));
+  app.get('*', (req, res) => {
+    res.sendFile(join(__dirname, 'dist/index.html'));
+  });
 }
 
 // Port d'écoute

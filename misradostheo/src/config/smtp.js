@@ -1,27 +1,20 @@
-// src/config/smtp.js - Configuration fonctionnelle
+// src/config/smtp.js - Version sécurisée
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
 
 let transporter = null;
 
 const initTransporter = () => {
-  // Vérification des identifiants
+  // Vérification des identifiants - PAS de valeurs par défaut en production
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-    console.error('ERREUR: Identifiants email manquants dans le fichier .env');
-    
-    // En développement, utiliser des identifiants par défaut pour les tests
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Utilisation d\'identifiants de développement');
-      
-      process.env.EMAIL_USER = 'misradosteo.il@gmail.com';
-      process.env.EMAIL_PASSWORD = 'zclpsdtupdmcjuey'; // Remplacez par votre nouveau mot de passe d'application
-    }
+    console.error('ERREUR: Identifiants email manquants dans les variables d\'environnement');
+    throw new Error('Configuration email manquante');
   }
   
   if (!transporter) {
     console.log('Création du transporteur SMTP...');
     
-    transporter = nodemailer.createTransport({
+    transporter = nodemailer.createTransporter({
       host: 'smtp.gmail.com',
       port: 587,
       secure: false, // false pour TLS - 587, true pour SSL - 465
@@ -30,7 +23,6 @@ const initTransporter = () => {
         pass: process.env.EMAIL_PASSWORD
       },
       tls: {
-        // Ne pas vérifier le certificat SSL - c'est ce qui a permis à l'envoi de fonctionner
         rejectUnauthorized: false
       }
     });
@@ -49,7 +41,7 @@ const sendMail = async (mailOptions) => {
     }
     
     // Destination
-    mailOptions.to = process.env.EMAIL_USER || 'misradosteo.il@gmail.com';
+    mailOptions.to = process.env.EMAIL_USER;
     
     console.log('Tentative d\'envoi d\'email à:', mailOptions.to);
     console.log('Sujet:', mailOptions.subject);
