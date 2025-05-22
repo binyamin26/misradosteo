@@ -1,11 +1,11 @@
-// src/config/smtp.js - Version sécurisée
+// src/config/smtp.js - Version corrigée
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
 
 let transporter = null;
 
 const initTransporter = () => {
-  // Vérification des identifiants - PAS de valeurs par défaut en production
+  // Vérification des identifiants
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
     console.error('ERREUR: Identifiants email manquants dans les variables d\'environnement');
     throw new Error('Configuration email manquante');
@@ -14,10 +14,10 @@ const initTransporter = () => {
   if (!transporter) {
     console.log('Création du transporteur SMTP...');
     
-    transporter = nodemailer.createTransporter({
+    transporter = nodemailer.createTransport({  // ← CORRECTION ICI
       host: 'smtp.gmail.com',
       port: 587,
-      secure: false, // false pour TLS - 587, true pour SSL - 465
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
