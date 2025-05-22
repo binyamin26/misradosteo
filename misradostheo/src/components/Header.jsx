@@ -7,20 +7,47 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
-  // Effet pour détecter le défilement et changer l'apparence du header
+  // Effet pour détecter le défilement avec throttle simple
   useEffect(() => {
+    let timeoutId = null;
+    let lastScrollY = 0;
+    
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+      const currentScrollY = window.scrollY;
+      
+      // Seulement si le scroll change de manière significative
+      if (Math.abs(currentScrollY - lastScrollY) > 5) {
+        
+        // Annuler le timeout précédent
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        
+        // Délai pour éviter les changements trop fréquents
+        timeoutId = setTimeout(() => {
+          setScrolled(prevScrolled => {
+            // Seuils avec hystérésis large
+            if (!prevScrolled && currentScrollY > 50) {
+              return true;
+            } else if (prevScrolled && currentScrollY < 20) {
+              return false;
+            }
+            return prevScrolled;
+          });
+        }, 50); // 50ms de délai
+        
+        lastScrollY = currentScrollY;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
     };
-  }, [scrolled]);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -80,7 +107,6 @@ function Header() {
           <i className="fas fa-calendar-check"></i>
           קבע פגישה
         </Link>
-        {/* Les icônes des réseaux sociaux ont été supprimées */}
       </div>
     </header>
   );
